@@ -6,8 +6,9 @@
   </head>
   <body>
 
-    <div id="app">{{message}}</div>   <!-- 被vue实例管理 -->
-    <div>{{message}}</div>            <!-- 未被vue实例管理 -->
+    <div id="app">
+      <li v-for="(item, index) in movies" :key="index">{{item}}</li>
+    </div>
 
     <script src="../resources/vue.js"></script>
     
@@ -15,7 +16,8 @@
       var app = new Vue({
         el: "#app",   // 声明要管理的元素
         data: { // 数据声明
-          message: "Hello Vio!"
+          message: "Hello Vio!",
+          movies: ['One Piece', 'Aquaman', 'Space travel', 'Layers of Dreams'],
         }
       });
     </script>
